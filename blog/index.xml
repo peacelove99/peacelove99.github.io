@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on My New Hugo Site</title>
+    <link>https://peacelove99.github.io.git/blog/</link>
+    <description>Recent content in Blogs on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Apr 2022 13:15:51 -0700</lastBuildDate>
+    
+	<atom:link href="https://peacelove99.github.io.git/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo博客搭建</title>
+      <link>https://peacelove99.github.io.git/blog/hugo/</link>
+      <pubDate>Tue, 05 Apr 2022 13:15:51 -0700</pubDate>
+      
+      <guid>https://peacelove99.github.io.git/blog/hugo/</guid>
+      <description>环境准备 本地主机（Ubuntu20.04）
+下载git
+下载hugo
+sudo apt-get install hugo hugo version #检查下载情况 搭建项目 建立并初始化文件夹
+hugo new site my_hugo_blog 选择博客主题 https://themes.gohugo.io
+以m10c为例
+cd my_hugo_blog git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c cd themes/ ls #查看已有主题 本地启动博客
+cd ..	#回到博客根目录下my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
+编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容</description>
+    </item>
+    
+  </channel>
+</rss>
