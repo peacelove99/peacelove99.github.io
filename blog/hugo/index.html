@@ -20,8 +20,12 @@ sudo apt-get install hugo hugo version #检查下载情况 搭建项目 建立�
 hugo new site my_hugo_blog 选择博客主题 https://themes.gohugo.io
 以m10c为例
 cd my_hugo_blog git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c cd themes/ ls #查看已有主题 本地启动博客
-cd ..	#回到博客根目录下my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
-编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容"/>
+cd ..	#回到博客根目录my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
+编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容，写完重启博客
+cd ../.. #回到博客根目录my_hugo_blog hugo server -t m10c --buildDrafts 部署到Github 生成项目文件
+hugo --theme=m10c --baseUrl=&#34;https://peacelove99.github.io.git/&#34; --buildDrafts 根目录my_hugo_blog下生成public文件夹
+public初始化为 Git 仓库
+cd public git init git add . 部署到远端"/>
 
     <meta property="og:title" content="Hugo博客搭建" />
 <meta property="og:description" content="环境准备 本地主机（Ubuntu20.04）
@@ -31,8 +35,12 @@ sudo apt-get install hugo hugo version #检查下载情况 搭建项目 建立�
 hugo new site my_hugo_blog 选择博客主题 https://themes.gohugo.io
 以m10c为例
 cd my_hugo_blog git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c cd themes/ ls #查看已有主题 本地启动博客
-cd ..	#回到博客根目录下my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
-编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容" />
+cd ..	#回到博客根目录my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
+编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容，写完重启博客
+cd ../.. #回到博客根目录my_hugo_blog hugo server -t m10c --buildDrafts 部署到Github 生成项目文件
+hugo --theme=m10c --baseUrl=&#34;https://peacelove99.github.io.git/&#34; --buildDrafts 根目录my_hugo_blog下生成public文件夹
+public初始化为 Git 仓库
+cd public git init git add . 部署到远端" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://peacelove99.github.io.git/blog/hugo/" />
 <meta property="article:published_time" content="2022-04-05T13:15:51-07:00" />
@@ -85,12 +93,27 @@ git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c
 cd themes/
 ls <span style="color:#75715e">#查看已有主题</span>
 </code></pre></div><p>本地启动博客</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ..	<span style="color:#75715e">#回到博客根目录下my_hugo_blog</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ..	<span style="color:#75715e">#回到博客根目录my_hugo_blog</span>
 hugo server -t m10c --buildDrafts
 </code></pre></div><p>访问http://localhost:1313/</p>
 <h2 id="编写博客">编写博客</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new 栏目名/文章名.md
-</code></pre></div><p>在.md文件文件种写博文内容</p>
+</code></pre></div><p>在.md文件文件种写博文内容，写完重启博客</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ../.. <span style="color:#75715e">#回到博客根目录my_hugo_blog</span>
+hugo server -t m10c --buildDrafts
+</code></pre></div><h2 id="部署到github">部署到Github</h2>
+<p>生成项目文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo --theme<span style="color:#f92672">=</span>m10c --baseUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://peacelove99.github.io.git/&#34;</span> --buildDrafts
+</code></pre></div><p>根目录my_hugo_blog下生成public文件夹</p>
+<p>public初始化为 Git 仓库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">cd</span> <span style="color:#e6db74">public</span>
+<span style="color:#e6db74">git</span> <span style="color:#e6db74">init</span>
+<span style="color:#e6db74">git</span> <span style="color:#e6db74">add</span> <span style="color:#e6db74">.</span>
+</code></pre></div><p>部署到远端</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">git</span> <span style="color:#e6db74">commit</span> <span style="color:#e6db74">-m</span> <span style="color:#e6db74">&#34;我的hugo博客第0次提交&#34;</span>
+<span style="color:#e6db74">git</span> <span style="color:#e6db74">remote</span> <span style="color:#e6db74">add</span> <span style="color:#e6db74">origin</span> <span style="color:#e6db74">https://github.com/peacelove99/peacelove99.github.io.git</span>
+<span style="color:#e6db74">git</span> <span style="color:#e6db74">push</span> <span style="color:#e6db74">-u</span> <span style="color:#e6db74">origin</span> <span style="color:#e6db74">master</span>
+</code></pre></div><p>输入用户名和token</p>
 
     </div>
     <div class="post-footer">

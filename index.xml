@@ -24,8 +24,12 @@ sudo apt-get install hugo hugo version #检查下载情况 搭建项目 建立�
 hugo new site my_hugo_blog 选择博客主题 https://themes.gohugo.io
 以m10c为例
 cd my_hugo_blog git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c cd themes/ ls #查看已有主题 本地启动博客
-cd ..	#回到博客根目录下my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
-编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容</description>
+cd ..	#回到博客根目录my_hugo_blog hugo server -t m10c --buildDrafts 访问http://localhost:1313/
+编写博客 hugo new 栏目名/文章名.md 在.md文件文件种写博文内容，写完重启博客
+cd ../.. #回到博客根目录my_hugo_blog hugo server -t m10c --buildDrafts 部署到Github 生成项目文件
+hugo --theme=m10c --baseUrl=&amp;#34;https://peacelove99.github.io.git/&amp;#34; --buildDrafts 根目录my_hugo_blog下生成public文件夹
+public初始化为 Git 仓库
+cd public git init git add . 部署到远端</description>
     </item>
     
   </channel>
